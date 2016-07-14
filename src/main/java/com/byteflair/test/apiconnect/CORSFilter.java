@@ -15,7 +15,11 @@ public class CORSFilter extends WebMvcConfigurerAdapter {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**");
+        registry.addMapping("/**")
+            .allowCredentials(true)
+            .allowedHeaders("*")
+            .allowedMethods("*")
+            ;
     }
 
 
